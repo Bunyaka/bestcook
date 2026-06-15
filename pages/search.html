@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BestCook — Search</title>
+  <link rel="stylesheet" href="../styles/style.css" />
+</head>
+<body>
+<!-- ════ NAV ════ -->
+<nav class="navbar">
+  <div class="navbar-inner">
+    <a href="../index.html" class="nav-logo">
+      <div class="nav-logo-mark">B</div>
+      <span class="nav-logo-text">BestCook</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="recipe.html">Recipes</a></li>
+      <li><a href="ingredients.html">Ingredients</a></li>
+      <li><a href="skills.html">Skills</a></li>
+      <li><a href="dining.html">Dining Out</a></li>
+      <li><a href="search.html">Search</a></li>
+    </ul>
+    <div class="nav-icons">
+      <button class="nav-icon-btn" id="searchBtn" aria-label="Search">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      </button>
+      <button class="nav-icon-btn" aria-label="Settings">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+      </button>
+      <button class="nav-icon-btn" id="hamburgerBtn" aria-label="Menu">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- ════ OVERLAY MENU ════ -->
+<div class="overlay-menu" id="overlayMenu" role="dialog" aria-modal="true">
+  <div class="overlay-header">
+    <a href="../index.html" class="nav-logo"><div class="nav-logo-mark">B</div><span class="nav-logo-text">BestCook</span></a>
+    <button class="overlay-close" id="overlayClose" aria-label="Close menu"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+  </div>
+  <ul class="overlay-nav">
+    <li><a href="recipe.html">Recipes <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg></a></li>
+    <li><a href="ingredients.html">Ingredients <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg></a></li>
+    <li><a href="skills.html">Skills <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg></a></li>
+    <li><a href="dining.html">Dining Out <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg></a></li>
+    <li><a href="search.html">Search <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg></a></li>
+  </ul>
+  <div class="overlay-footer">© 2026 BestCook. All rights reserved.</div>
+</div>
+
+<!-- ════ SEARCH OVERLAY ════ -->
+<div class="search-overlay" id="searchOverlay" role="dialog" aria-modal="true">
+  <button class="search-overlay-close" id="searchClose" aria-label="Close search"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+  <div class="search-overlay-inner">
+    <div class="search-input-wrap">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      <input type="text" id="searchInput" placeholder="Search recipes, skills, ingredients…" />
+    </div>
+    <div class="search-suggestions">
+      <p>Popular searches</p>
+      <div class="search-tags">
+        <a href="search-results.html" class="search-tag">Veggie Chili</a>
+        <a href="search-results.html" class="search-tag">Pasta</a>
+        <a href="search-results.html" class="search-tag">Olive Oil</a>
+        <a href="search-results.html" class="search-tag">Quick dinners</a>
+        <a href="search-results.html" class="search-tag">Vegan</a>
+        <a href="search-results.html" class="search-tag">Baking</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<main class="page-content">
+  <div class="search-hero">
+    <div class="search-hero-inner">
+      <h1>Find Your Next Favorite</h1>
+      <p>Search thousands of recipes, skills, and ingredients.</p>
+      <a href="search-results.html" style="display:block;">
+        <div class="search-bar">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          <input type="text" id="mainSearchInput" placeholder="Veggie chili, knife skills, olive oil…" />
+        </div>
+      </a>
+    </div>
+  </div>
+
+  <div class="category-chips">
+    <a href="search-results.html" class="chip active">All</a>
+    <a href="search-results.html" class="chip">Recipes</a>
+    <a href="search-results.html" class="chip">Skills</a>
+    <a href="search-results.html" class="chip">Ingredients</a>
+    <a href="search-results.html" class="chip">Dining Out</a>
+  </div>
+
+  <section class="section">
+    <div class="section-inner">
+      <p class="section-label" style="margin-bottom:16px;">Trending Topics</p>
+      <div style="display:flex;flex-wrap:wrap;gap:8px;">
+        <a href="search-results.html" class="chip">🌶️ Veggie Chili</a>
+        <a href="search-results.html" class="chip">🔪 Knife Skills</a>
+        <a href="search-results.html" class="chip">🫒 Olive Oil</a>
+        <a href="search-results.html" class="chip">🥗 Vegan</a>
+        <a href="search-results.html" class="chip">🥩 Brisket</a>
+        <a href="search-results.html" class="chip">🧀 Mac &amp; Cheese</a>
+        <a href="search-results.html" class="chip">🍗 Chicken</a>
+        <a href="search-results.html" class="chip">🧇 Biscuits</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="border-top:1px solid var(--gray-lt);">
+    <div class="section-inner">
+      <p class="section-label" style="margin-bottom:20px;">Browse by Category</p>
+      <div class="browse-grid">
+        <a href="recipe.html" class="browse-card"><div class="browse-icon" style="background:rgba(232,96,60,.1);">🍲</div><div><div class="browse-card-title">Recipes</div><div class="browse-card-desc">Hundreds of recipes for every occasion</div></div><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg></a>
+        <a href="skills.html" class="browse-card"><div class="browse-icon" style="background:rgba(27,58,45,.1);">🔪</div><div><div class="browse-card-title">Skills</div><div class="browse-card-desc">Master essential cooking techniques</div></div><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg></a>
+        <a href="ingredients.html" class="browse-card"><div class="browse-icon" style="background:rgba(200,184,154,.2);">🫒</div><div><div class="browse-card-title">Ingredients</div><div class="browse-card-desc">Deep dives into pantry staples &amp; produce</div></div><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg></a>
+        <a href="dining.html" class="browse-card"><div class="browse-icon" style="background:rgba(232,96,60,.1);">🍽️</div><div><div class="browse-card-title">Dining Out</div><div class="browse-card-desc">Restaurant guides &amp; dining tips</div></div><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg></a>
+      </div>
+    </div>
+  </section>
+</main>
+<footer class="site-footer">
+  <div class="site-footer-inner">
+    <strong>BestCook</strong>
+    Your community for discovering recipes, skills &amp; great eats. · © 2026 BestCook. All rights reserved.
+  </div>
+</footer>
+<script src="../js/nav.js"></script>
+</body>
+</html>

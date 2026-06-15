@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BestCook — Dining Out</title>
+  <link rel="stylesheet" href="../styles/style.css" />
+</head>
+<body>
+<!-- ════ NAV ════ -->
+<nav class="navbar">
+  <div class="navbar-inner">
+    <a href="../index.html" class="nav-logo">
+      <div class="nav-logo-mark">B</div>
+      <span class="nav-logo-text">BestCook</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="recipe.html">Recipes</a></li>
+      <li><a href="ingredients.html">Ingredients</a></li>
+      <li><a href="skills.html">Skills</a></li>
+      <li><a href="dining.html">Dining Out</a></li>
+      <li><a href="search.html">Search</a></li>
+    </ul>
+    <div class="nav-icons">
+      <button class="nav-icon-btn" id="searchBtn" aria-label="Search">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      </button>
+      <button class="nav-icon-btn" aria-label="Settings">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+      </button>
+      <button class="nav-icon-btn" id="hamburgerBtn" aria-label="Menu">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- ════ OVERLAY MENU ════ -->
+<div class="overlay-menu" id="overlayMenu" role="dialog" aria-modal="true">
+  <div class="overlay-header">
+    <a href="../index.html" class="nav-logo"><div class="nav-logo-mark">B</div><span class="nav-logo-text">BestCook</span></a>
+    <button class="overlay-close" id="overlayClose" aria-label="Close menu"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+  </div>
+  <ul class="overlay-nav">
+    <li><a href="recipe.html">Recipes <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg></a></li>
+    <li><a href="ingredients.html">Ingredients <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg></a></li>
+    <li><a href="skills.html">Skills <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg></a></li>
+    <li><a href="dining.html">Dining Out <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg></a></li>
+    <li><a href="search.html">Search <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg></a></li>
+  </ul>
+  <div class="overlay-footer">© 2026 BestCook. All rights reserved.</div>
+</div>
+
+<!-- ════ SEARCH OVERLAY ════ -->
+<div class="search-overlay" id="searchOverlay" role="dialog" aria-modal="true">
+  <button class="search-overlay-close" id="searchClose" aria-label="Close search"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+  <div class="search-overlay-inner">
+    <div class="search-input-wrap">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      <input type="text" id="searchInput" placeholder="Search recipes, skills, ingredients…" />
+    </div>
+    <div class="search-suggestions">
+      <p>Popular searches</p>
+      <div class="search-tags">
+        <a href="search-results.html" class="search-tag">Veggie Chili</a>
+        <a href="search-results.html" class="search-tag">Pasta</a>
+        <a href="search-results.html" class="search-tag">Olive Oil</a>
+        <a href="search-results.html" class="search-tag">Quick dinners</a>
+        <a href="search-results.html" class="search-tag">Vegan</a>
+        <a href="search-results.html" class="search-tag">Baking</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<main class="page-content">
+  <div class="page-header">
+    <div class="page-header-inner">
+      <p class="section-label">BestCook</p>
+      <h1>Dining Out</h1>
+      <p>Your trusted resource for discovering incredible eateries and getting the most out of your restaurant experiences.</p>
+    </div>
+  </div>
+
+  <div class="story-block">
+    <div class="story-block-inner">
+      <p class="section-label" style="margin-bottom:8px;">Navigating the New Menu</p>
+      <div class="story-layout">
+        <div class="story-img">
+          <img src="../images/vegan-food.jpg" alt="Vegetarian &amp; Vegan Dining" loading="lazy" />
+        </div>
+        <div class="story-text">
+          <h2>Vegetarian &amp; Vegan Dining</h2>
+          <h4 style="margin-bottom:18px;">How Restaurants Are Revolutionizing Plant-Based Menus</h4>
+          <p>The culinary landscape is shifting, and plant-based options are no longer just an afterthought. From innovative meat alternatives to creative vegetable-centric dishes, restaurants are embracing vegetarian and vegan dining with exciting new menus. This guide will help you confidently explore these options, understand common terminology, and discover how to find establishments that truly excel in plant-forward cuisine.</p>
+          <div class="story-links"><a href="#" class="story-link">Read the Full Guide</a><a href="#" class="story-link">Watch Video Tutorial</a><a href="#" class="story-link">Print Tips Sheet</a></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <section class="section" style="border-top:1px solid var(--gray-lt);">
+    <div class="section-inner">
+      <div class="section-head"><div><p class="section-label">Trending Now</p><h2>Popular This Week</h2></div></div>
+      <div class="card-row"><div class="recipe-card"><div class="recipe-card-img"><img src="../images/chicken-piccata.jpg" alt="Chicken Piccata" loading="lazy" /></div>
+      <div class="recipe-card-body"><div class="recipe-card-title">Chicken Piccata</div><div class="recipe-card-meta">4 servings · 30 min</div></div></div>
+        <div class="recipe-card"><div class="recipe-card-img"><img src="../images/banh-mi.jpg" alt="Tofu Banh Mi" loading="lazy" /></div>
+      <div class="recipe-card-body"><div class="recipe-card-title">Tofu Banh Mi</div><div class="recipe-card-meta">2 servings · 25 min</div></div></div>
+        <div class="recipe-card"><div class="recipe-card-img"><img src="../images/butter-biscuits.jpg" alt="Betty's Butter Biscuits" loading="lazy" /></div>
+      <div class="recipe-card-body"><div class="recipe-card-title">Betty's Butter Biscuits</div><div class="recipe-card-meta">12 pieces · 40 min</div></div></div>
+        <div class="recipe-card"><div class="recipe-card-img"><img src="../images/texas-brisket.png" alt="Obie's Texas Brisket" loading="lazy" /></div>
+      <div class="recipe-card-body"><div class="recipe-card-title">Obie's Texas Brisket</div><div class="recipe-card-meta">10 servings · 5 hrs</div></div></div></div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-inner">
+      <div class="section-head"><div><p class="section-label">Hand-Picked for You</p><h2>Recommendations</h2></div></div>
+      <div class="card-row"><div class="recipe-card featured"><div class="recipe-card-img"><img src="../images/classic-cesar-salad.jpg" alt="Classic Caesar Salad" loading="lazy" /></div>
+      <div class="recipe-card-body"><div class="recipe-card-title">Classic Caesar Salad</div><div class="recipe-card-meta">4 servings · 20 min</div></div></div>
+        <div class="recipe-card featured"><div class="recipe-card-img"><img src="../images/mac-n-cheese.jpg" alt="Karla's Mac N Cheese" loading="lazy" /></div>
+      <div class="recipe-card-body"><div class="recipe-card-title">Karla's Mac N Cheese</div><div class="recipe-card-meta">6 servings · 35 min</div></div></div>
+        <div class="recipe-card featured"><div class="recipe-card-img"><img src="../images/au-gratin.jpg" alt="Potatoes au Gratin" loading="lazy" /></div>
+      <div class="recipe-card-body"><div class="recipe-card-title">Potatoes au Gratin</div><div class="recipe-card-meta">8 servings · 75 min</div></div></div>
+        <div class="recipe-card featured"><div class="recipe-card-img"><img src="../images/rice-pudding.jpeg" alt="Richmond Style Rice Pudding" loading="lazy" /></div>
+      <div class="recipe-card-body"><div class="recipe-card-title">Richmond Style Rice Pudding</div><div class="recipe-card-meta">4 servings · 45 min</div></div></div></div>
+    </div>
+  </section>
+
+  <div style="padding:0 var(--side-pad) 40px;">
+    <div style="max-width:var(--content-max);margin:0 auto;background:var(--green);border-radius:var(--radius);padding:40px 32px;text-align:center;">
+      <h3 style="color:var(--white);margin-bottom:10px;">Have a Question? Ask the Experts!</h3>
+      <p style="color:rgba(255,255,255,.7);margin-bottom:20px;max-width:480px;margin-left:auto;margin-right:auto;">Can't find the answer? Submit your cooking question — we might feature it in an article or video!</p>
+      <a href="#" class="btn-white">Ask a Question</a>
+    </div>
+  </div>
+</main>
+<footer class="site-footer">
+  <div class="site-footer-inner">
+    <strong>BestCook</strong>
+    Your community for discovering recipes, skills &amp; great eats. · © 2026 BestCook. All rights reserved.
+  </div>
+</footer>
+<script src="../js/nav.js"></script>
+</body>
+</html>
